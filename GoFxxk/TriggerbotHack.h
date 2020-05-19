@@ -41,6 +41,7 @@ void TriggerBot() {
 		__emit 0x48
 	}
 	uintptr_t* localEntPtr = (uintptr_t*)LocalPlayer::Get();
+	if (*(uint32_t*)localEntPtr) { return; }
 	if (localEntPtr) {
 		uintptr_t localEnt = *localEntPtr;
 		int localTeam = *(int*)(localEnt + hazedumper::netvars::m_iTeamNum);

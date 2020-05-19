@@ -5,11 +5,17 @@
 #include "EnemyList.h"
 #include "Offsets.h"
 /*
+V1:
 每次循环:
 	遍历所有敌人,
 	瞄准,
 	判断能否击中
 	开枪
+
+V2:
+	多线程雷达,
+		将所有雷达中的人加入队列
+	单线程瞄准
 */
 class Vector3;
 class MyHack
@@ -89,7 +95,7 @@ inline void FixAngle(int myWeaponID,float currentDistance) {
 	case 16: delay = 0.2; break; //m4a4
 	case 11: delay = 0.15; break; // G3SG1, 不开镜还行, 开镜需要参数
 	case 59:
-	case 7: delay = 0.35; break; //ak
+	case 7: delay = 0.28; break; //ak
 	case 40:delay = 0.2; break; //ssg, 开镜, 不开镜很难打
 	case 9: delay = 0.2; break; //awp, 0.15很难修复镜面
 	case 39: delay = 0.15; break; //sg, 不开镜, 开镜0.1有点慢

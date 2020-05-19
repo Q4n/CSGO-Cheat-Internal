@@ -1,7 +1,10 @@
 ﻿#include "includes.h"
 #include "Hack.h"
 
-#undef _DEBUG
+/*
+侧键开关
+雷达F3
+*/
 
 DWORD WINAPI OnDllAttach(PVOID base) {
 #ifdef _DEBUG

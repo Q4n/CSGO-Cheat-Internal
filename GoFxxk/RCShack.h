@@ -19,6 +19,7 @@ void RCShack() {
         __emit 0x48
     }
     uintptr_t* localPlayer = (uintptr_t*)LocalPlayer::Get();  // get our local player (from entity list) *dont fkn judge my ass*
+    if (*(uint32_t*)localPlayer) { return; }
     vec3* viewAngles = (vec3*)(*(uintptr_t*)(engineModule + hazedumper::signatures::dwClientState/*dwClientState*/) + hazedumper::signatures::dwClientState_ViewAngles/*dwClientState_viewAngles*/); // get our view angles
     _asm
     {
